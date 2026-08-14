@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binali & Misal - Wedding Celebration</title>
+    <meta name="description" content="You are cordially invited to celebrate our wedding day. RSVP to confirm your attendance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #9e7436;
+            --gold-light: #c9a96e;
+            --brown: #6b4226;
+            --cream: #f5f0e8;
+            --cream-dark: #ebe4d6;
+            --white-card: #ffffffee;
+            --text-dark: #3a2e22;
+            --text-muted: #8a7d6f;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Josefin Sans', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+            color: var(--text-dark);
+        }
+
+        /* ── Main Card ── */
+        .invitation-card {
+            max-width: 520px;
+            width: 100%;
+            background: var(--white-card);
+            border-radius: 24px;
+            box-shadow: 0 20px 80px rgba(107, 66, 38, 0.12), 0 2px 12px rgba(0,0,0,0.04);
+            overflow: hidden;
+            animation: cardReveal 0.8s ease-out;
+        }
+
+        @keyframes cardReveal {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Photo Triptych ── */
+        .photo-triptych {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 6px;
+            padding: 24px 24px 0;
+        }
+
+        .photo-cell {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 2 / 3;
+        }
+
+        .photo-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%) contrast(1.05);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .photo-cell:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.04);
+        }
+
+        .photo-cell .date-overlay {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 300;
+            color: #fff;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+            letter-spacing: 2px;
+            pointer-events: none;
+        }
+
+        /* ── Content Body ── */
+        .card-body {
+            padding: 36px 32px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .together-text {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .couple-names {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gold);
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .invite-text {
+            font-family: var(--font-body);
+            font-size: 0.68rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .thin-divider {
+            width: 50px;
+            height: 1px;
+            background: var(--gold-light);
+            margin: 0 auto 28px;
+        }
+
+        .venue-name {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .venue-location {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .ceremony-time {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+        }
+
+        /* ── Floral Accent (CSS-drawn) ── */
+        .floral-accent {
+            position: relative;
+            height: 80px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floral-accent::before,
+        .floral-accent::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            opacity: 0.08;
+        }
+
+        .floral-accent::before {
+            background: var(--gold);
+            left: 20%;
+            top: -20px;
+        }
+
+        .floral-accent::after {
+            background: var(--gold-light);
+            right: 20%;
+            top: -10px;
+        }
+
+        .floral-accent svg {
+            width: 180px;
+            height: 60px;
+            opacity: 0.2;
+        }
+
+        /* ── RSVP Button ── */
+        .rsvp-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            padding: 14px 56px;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .rsvp-btn:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(158, 116, 54, 0.3);
+        }
+
+        .rsvp-btn:active { transform: translateY(0); }
+
+        /* ── Fourth Photo ── */
+        .full-photo {
+            margin: 0 24px 24px;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+        }
+
+        .full-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .full-photo:hover img {
+            transform: scale(1.03);
+        }
+
+        /* ── Modal ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(30, 22, 14, 0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .modal-card {
+            background: #faf8f5;
+            margin: 40px auto;
+            padding: 40px 32px;
+            border-radius: 18px;
+            width: 100%;
+            max-width: 460px;
+            box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+            animation: modalSlide 0.35s ease;
+            position: relative;
+        }
+
+        @keyframes modalSlide {
+            from { transform: translateY(-30px); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close:hover { color: var(--gold); }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .modal-subtitle {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+        }
+
+        .modal-subtitle small {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.7rem;
+            color: #bbb;
+        }
+
+        /* ── Form ── */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            background: #fff;
+            color: var(--text-dark);
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(158, 116, 54, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 72px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .radio-option:has(input:checked) {
+            border-color: var(--gold);
+            background: rgba(158, 116, 54, 0.05);
+        }
+
+        .radio-option input[type="radio"] {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--gold);
+        }
+
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 0.82rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            background: var(--gold);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            margin-top: 6px;
+        }
+
+        .submit-btn:hover {
+            background: var(--brown);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(158, 116, 54, 0.25);
+        }
+
+        .submit-btn:disabled {
+            background: #c4b9a8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ── Success ── */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .success-message .check-circle {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin: 0 auto 16px;
+        }
+
+        .success-message h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ── Footer ── */
+        .card-footer {
+            text-align: center;
+            padding: 0 32px 28px;
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ── Responsive ── */
+
+        /* Tablet & small desktop */
+        @media (max-width: 768px) {
+            body { padding: 24px 12px; }
+            .modal-card { margin: 30px auto; }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 560px) {
+            body { padding: 12px 6px; }
+
+            .invitation-card {
+                border-radius: 16px;
+                box-shadow: 0 10px 40px rgba(107, 66, 38, 0.1);
+            }
+
+            .photo-triptych { padding: 14px 14px 0; gap: 4px; }
+            .photo-cell { border-radius: 10px; }
+            .photo-cell .date-overlay { font-size: 1.8rem; bottom: 8px; }
+
+            .card-body { padding: 24px 18px 28px; }
+            .couple-names { font-size: 2.2rem; }
+            .together-text { font-size: 0.6rem; letter-spacing: 2.5px; }
+            .invite-text { font-size: 0.58rem; letter-spacing: 2px; }
+            .venue-name { font-size: 0.78rem; letter-spacing: 2px; }
+            .venue-location { font-size: 0.65rem; }
+            .ceremony-time { font-size: 0.63rem; letter-spacing: 1.5px; }
+
+            .rsvp-btn { padding: 12px 44px; font-size: 0.72rem; }
+
+            .full-photo { margin: 0 14px 14px; border-radius: 10px; }
+            .card-footer { padding: 0 18px 18px; font-size: 0.6rem; }
+
+            /* Modal */
+            .modal-overlay { padding: 10px; }
+            .modal-card {
+                padding: 24px 18px;
+                margin: 16px auto;
+                border-radius: 14px;
+                max-width: 100%;
+            }
+            .modal-title { font-size: 1.5rem; }
+            .modal-subtitle { font-size: 0.7rem; margin-bottom: 22px; }
+
+            .form-group { margin-bottom: 14px; }
+            .form-group label { font-size: 0.7rem; }
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="tel"],
+            .form-group select,
+            .form-group textarea { padding: 10px 12px; font-size: 0.82rem; }
+
+            .radio-group { flex-direction: column; gap: 8px; }
+            .radio-option { padding: 9px 12px; }
+
+            .submit-btn { padding: 12px; font-size: 0.75rem; }
+
+            .success-message .check-circle { width: 48px; height: 48px; font-size: 1.3rem; }
+            .success-message h3 { font-size: 1.3rem; }
+            .success-message p { font-size: 0.75rem; }
+        }
+
+        /* Very small phones (< 380px) */
+        @media (max-width: 380px) {
+            body { padding: 8px 4px; }
+
+            .invitation-card { border-radius: 12px; }
+
+            .photo-triptych { padding: 10px 10px 0; gap: 3px; }
+            .photo-cell .date-overlay { font-size: 1.5rem; bottom: 6px; }
+
+            .card-body { padding: 20px 14px 24px; }
+            .couple-names { font-size: 1.9rem; }
+            .together-text { font-size: 0.55rem; letter-spacing: 2px; }
+            .invite-text { font-size: 0.52rem; }
+            .venue-name { font-size: 0.72rem; }
+            .ceremony-time { font-size: 0.58rem; }
+
+            .rsvp-btn { padding: 11px 36px; font-size: 0.68rem; }
+
+            .full-photo { margin: 0 10px 10px; border-radius: 8px; }
+            .card-footer { padding: 0 14px 14px; font-size: 0.55rem; }
+
+            .modal-card { padding: 20px 14px; }
+            .modal-title { font-size: 1.35rem; }
+        }
+
+        /* Safe area for notched phones */
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .modal-overlay {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card" id="invitationCard">
+        <!-- Photo Triptych with Date Overlay -->
+        <div class="photo-triptych">
+            <div class="photo-cell">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM (1).jpeg" alt="Wedding portrait" loading="lazy">
+                <span class="date-overlay">18</span>
+            </div>
+            <div class="photo-cell">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM (2).jpeg" alt="Wedding portrait" loading="lazy">
+                <span class="date-overlay">09</span>
+            </div>
+            <div class="photo-cell">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM.jpeg" alt="Wedding portrait" loading="lazy">
+                <span class="date-overlay">26</span>
+            </div>
+        </div>
+
+        <!-- Invitation Body -->
+        <div class="card-body">
+            <p class="together-text">Together with our families</p>
+            <h1 class="couple-names">Binali &amp; Misal</h1>
+            <p class="invite-text">Request the pleasure of your company<br>at our wedding celebration</p>
+
+            <div class="thin-divider"></div>
+
+            <p class="venue-name">Ahasa at ITC Ratnadipa</p>
+            <p class="venue-location">29th Floor, Colombo</p>
+            <p class="ceremony-time">18 September 2026 &middot; 6:30 PM to 11:30 PM</p>
+
+            <button class="rsvp-btn" id="rsvpOpenBtn" onclick="openRSVP()">RSVP</button>
+        </div>
+
+        <!-- Full-width Fourth Photo -->
+        <div class="full-photo">
+            <img src="assests/WhatsApp Image 2026-08-13 at 10.59.04 PM.jpeg" alt="Couple together" loading="lazy">
+        </div>
+
+        <p class="card-footer">We look forward to celebrating with you</p>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" id="rsvpCloseBtn" onclick="closeRSVP()" aria-label="Close RSVP form">&times;</button>
+            <h2 class="modal-title">Wedding RSVP</h2>
+            <p class="modal-subtitle">
+                Please respond by September 10, 2026
+                <small>* Required fields</small>
+            </p>
+
+            <div class="success-message" id="successMessage">
+                <div class="check-circle" aria-hidden="true">&#10003;</div>
+                <h3>Thank You</h3>
+                <p>Your response has been saved successfully.<br>We look forward to celebrating with you.</p>
+            </div>
+
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+94 123 456 789">
+                </div>
+
+                <div class="form-group">
+                    <label>Will you be attending? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="accept" name="attendance" value="Yes" required>
+                            <label for="accept">Joyfully Accepts</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="decline" name="attendance" value="No" required>
+                            <label for="decline">Regretfully Declines</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests (including you) *</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select number of guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6+ Guests</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary">Special Notes (Optional)</label>
+                    <textarea id="dietary" name="dietary" placeholder="Dietary requirements or a message for the couple..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Response</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("rsvpModal");
+        const form = document.getElementById("rsvpForm");
+        const successMessage = document.getElementById("successMessage");
+        const submitBtn = document.getElementById("submitBtn");
+
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcC5ddyad4Qp9Zv5i1zRhnusk8uLNaKwWujO3WFrqLPbQYsLTKOFVQe8kRCiSZHUy29A/exec";
+
+        function openRSVP() {
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeRSVP() {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+            successMessage.style.display = "none";
+            form.style.display = "block";
+        }
+
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) closeRSVP();
+        });
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape" && modal.style.display === "block") closeRSVP();
+        });
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = "SUBMITTING...";
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: "POST",
+                    body: formData
+                });
+
+                form.style.display = "none";
+                successMessage.style.display = "block";
+
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "SUBMIT RESPONSE";
+                    closeRSVP();
+                }, 3000);
+
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "SUBMIT RESPONSE";
+                alert("There was an error submitting your response. Please try again.");
+                console.error("RSVP Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>
