@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binali & Misal - Homecoming Invitation</title>
+    <meta name="description"
+        content="You are cordially invited to celebrate the Homecoming of Binali & Misal. RSVP to confirm your attendance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --sage: #5c6b56;
+            --sage-light: #8a9b7a;
+            --sage-dark: #3d4a38;
+            --ivory: #f7f4ef;
+            --ivory-warm: #ede8df;
+            --charcoal: #2c2c2c;
+            --text-soft: #6b6b6b;
+            --accent-rose: #c4a07a;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--ivory);
+            min-height: 100vh;
+            color: var(--charcoal);
+        }
+
+        /* ── Scroll Container ── */
+        .wedding-page {
+            max-width: 520px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* ── Hero Section ── */
+        .hero {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.75) saturate(0.9);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.05) 0%,
+                    rgba(0, 0, 0, 0.1) 40%,
+                    rgba(0, 0, 0, 0.55) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 24px 48px;
+            text-align: center;
+        }
+
+        .hero-label {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 12px;
+        }
+
+        .hero-names {
+            font-family: var(--font-display);
+            font-size: 3.4rem;
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .hero-names .ampersand {
+            display: block;
+            font-style: italic;
+            font-size: 1.8rem;
+            opacity: 0.7;
+            margin: 4px 0;
+        }
+
+        .hero-date {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ── Note Section ── */
+        .note-section {
+            padding: 48px 36px;
+            text-align: center;
+            background: var(--ivory);
+            border-top: 1px solid rgba(92, 107, 86, 0.1);
+            border-bottom: 1px solid rgba(92, 107, 86, 0.1);
+        }
+
+        .note-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .note-ornament .line {
+            width: 40px;
+            height: 1px;
+            background: var(--sage-light);
+            opacity: 0.5;
+        }
+
+        .note-ornament .diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--sage-light);
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+
+        .note-text {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--sage);
+            line-height: 1.9;
+        }
+
+        /* ── Photo Mosaic ── */
+        .photo-mosaic {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            padding: 4px;
+            background: #fff;
+        }
+
+        .mosaic-cell {
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+
+        .mosaic-cell.tall {
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .mosaic-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .mosaic-cell:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ── Details Section ── */
+        .details-section {
+            padding: 56px 36px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 28px;
+        }
+
+        .detail-block {
+            margin-bottom: 32px;
+        }
+
+        .detail-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-icon {
+            width: 36px;
+            height: 36px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--sage-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .detail-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-bottom: 4px;
+        }
+
+        .detail-sub {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-soft);
+            letter-spacing: 1px;
+            line-height: 1.7;
+        }
+
+        .details-divider {
+            width: 1px;
+            height: 36px;
+            background: var(--sage-light);
+            opacity: 0.3;
+            margin: 0 auto;
+        }
+
+        /* ── RSVP Section ── */
+        .rsvp-section {
+            padding: 48px 36px;
+            text-align: center;
+            background: var(--sage-dark);
+            color: #fff;
+        }
+
+        .rsvp-section .section-label {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .rsvp-heading {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .rsvp-sub {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+
+        .rsvp-btn {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            padding: 14px 56px;
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 0;
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.35s ease;
+        }
+
+        .rsvp-btn:hover {
+            background: #fff;
+            color: var(--sage-dark);
+            border-color: #fff;
+        }
+
+        .rsvp-btn:active {
+            transform: scale(0.98);
+        }
+
+        .rsvp-contacts {
+            margin-bottom: 28px;
+        }
+
+        .contacts-label {
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 4px;
+        }
+
+        .contact-item .contact-name {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-right: 6px;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* ── Footer ── */
+        .page-footer {
+            text-align: center;
+            padding: 28px 36px;
+            background: var(--sage-dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── Modal ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(44, 44, 44, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            animation: fadeIn 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-card {
+            background: var(--ivory);
+            margin: 40px auto;
+            padding: 44px 32px;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 460px;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+            animation: modalSlide 0.35s ease;
+            position: relative;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-soft);
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--sage);
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--sage-dark);
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .modal-subtitle {
+            text-align: center;
+            font-size: 0.72rem;
+            color: var(--text-soft);
+            letter-spacing: 1px;
+            margin-bottom: 32px;
+        }
+
+        .modal-subtitle small {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.68rem;
+            color: #bbb;
+        }
+
+        /* ── Form ── */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d8d4cd;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            background: #fff;
+            color: var(--charcoal);
+            transition: border-color 0.25s, box-shadow 0.25s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(92, 107, 86, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 72px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            flex: 1;
+            padding: 11px 14px;
+            border: 1px solid #d8d4cd;
+            border-radius: 2px;
+            transition: border-color 0.25s, background 0.25s;
+        }
+
+        .radio-option:has(input:checked) {
+            border-color: var(--sage);
+            background: rgba(92, 107, 86, 0.06);
+        }
+
+        .radio-option input[type="radio"] {
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--sage);
+        }
+
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 0.8rem;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--sage-dark);
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: var(--sage);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            background: #b5b5a8;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ── Success ── */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px 20px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .success-message .check-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--sage);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 16px;
+        }
+
+        .success-message h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--sage-dark);
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        /* ── Animations ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 560px) {
+            .wedding-page {
+                box-shadow: none;
+            }
+
+            .hero-names {
+                font-size: 2.6rem;
+            }
+
+            .hero-names .ampersand {
+                font-size: 1.4rem;
+            }
+
+            .hero-label {
+                font-size: 0.58rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-date {
+                font-size: 0.65rem;
+            }
+
+            .hero-overlay {
+                padding: 0 20px 36px;
+            }
+
+            .note-section {
+                padding: 36px 24px;
+            }
+
+            .note-text {
+                font-size: 1.05rem;
+            }
+
+            .details-section {
+                padding: 40px 24px;
+            }
+
+            .detail-title {
+                font-size: 1.2rem;
+            }
+
+            .rsvp-section {
+                padding: 40px 24px;
+            }
+
+            .rsvp-heading {
+                font-size: 1.6rem;
+            }
+
+            .rsvp-btn {
+                padding: 12px 40px;
+                font-size: 0.68rem;
+            }
+
+            .page-footer {
+                padding: 20px 24px;
+            }
+
+            /* Modal */
+            .modal-overlay {
+                padding: 10px;
+            }
+
+            .modal-card {
+                padding: 28px 18px;
+                margin: 16px auto;
+                max-width: 100%;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-subtitle {
+                font-size: 0.68rem;
+                margin-bottom: 24px;
+            }
+
+            .form-group {
+                margin-bottom: 14px;
+            }
+
+            .form-group label {
+                font-size: 0.65rem;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="tel"],
+            .form-group select,
+            .form-group textarea {
+                padding: 10px 12px;
+                font-size: 0.82rem;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .submit-btn {
+                padding: 12px;
+                font-size: 0.72rem;
+            }
+
+            .success-message .check-circle {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+            }
+
+            .success-message h3 {
+                font-size: 1.3rem;
+            }
+
+            .success-message p {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero-names {
+                font-size: 2.2rem;
+            }
+
+            .note-section {
+                padding: 28px 18px;
+            }
+
+            .note-text {
+                font-size: 0.95rem;
+            }
+
+            .details-section {
+                padding: 32px 18px;
+            }
+
+            .rsvp-section {
+                padding: 32px 18px;
+            }
+
+            .rsvp-heading {
+                font-size: 1.4rem;
+            }
+
+            .modal-card {
+                padding: 22px 14px;
+            }
+
+            .modal-title {
+                font-size: 1.35rem;
+            }
+        }
+
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .modal-overlay {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wedding-page">
+        <!-- Hero -->
+        <div class="hero">
+            <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM (2).jpeg" alt="Binali and Misal" loading="eager">
+            <div class="hero-overlay">
+                <p class="hero-label">Our Forever Begins</p>
+                <h1 class="hero-names">
+                    Binali
+                    <span class="ampersand">&</span>
+                    Misal
+                </h1>
+                <p class="hero-date">18 &middot; September &middot; 2026</p>
+            </div>
+        </div>
+
+        <!-- Heartfelt Note -->
+        <div class="note-section fade-up">
+            <div class="note-ornament">
+                <span class="line"></span>
+                <span class="diamond"></span>
+                <span class="line"></span>
+            </div>
+            <p class="note-text">
+                With joyful hearts,<br>
+                we invite you to share in our happiness<br>
+                as we begin our forever together.
+            </p>
+        </div>
+
+        <!-- Photo Mosaic -->
+        <div class="photo-mosaic fade-up">
+            <div class="mosaic-cell tall">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM (1).jpeg" alt="Wedding portrait"
+                    loading="lazy">
+            </div>
+            <div class="mosaic-cell">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM.jpeg" alt="Wedding portrait" loading="lazy">
+            </div>
+            <div class="mosaic-cell">
+                <img src="assests/WhatsApp Image 2026-08-13 at 10.59.04 PM.jpeg" alt="Couple portrait" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Event Details -->
+        <div class="details-section fade-up">
+            <p class="section-label">Celebration Details</p>
+
+            <div class="detail-block">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </div>
+                <p class="detail-title">Friday, 18 September 2026</p>
+                <p class="detail-sub">6:30 PM to 11:30 PM</p>
+            </div>
+
+            <div class="details-divider"></div>
+
+            <div class="detail-block" style="margin-top: 32px;">
+                <div class="detail-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                </div>
+                <p class="detail-title">Ahasa at ITC Ratnadipa</p>
+                <p class="detail-sub">29th Floor, Colombo</p>
+            </div>
+        </div>
+
+        <!-- RSVP CTA -->
+        <div class="rsvp-section fade-up">
+            <p class="section-label">Kindly Respond</p>
+            <h2 class="rsvp-heading">Will You Join Us?</h2>
+            <p class="rsvp-sub">Please respond by September 4, 2026</p>
+            <div class="rsvp-contacts">
+                <p class="contacts-label">For RSVP inquiries, contact</p>
+                <p class="contact-item"><span class="contact-name">Sumith</span> <a href="tel:0773339433">077 333
+                        9433</a></p>
+                <p class="contact-item"><span class="contact-name">Prasad</span> <a href="tel:0772642651">077 264
+                        2651</a></p>
+                <p class="contact-item"><span class="contact-name">Amasha</span> <a href="tel:0776382101">077 638
+                        2101</a></p>
+            </div>
+            <button class="rsvp-btn" id="rsvpOpenBtn" onclick="openRSVP()">RSVP Now</button>
+        </div>
+
+        <p class="page-footer">B & M &mdash; 18.09.2026</p>
+    </div>
+
+    <!-- RSVP Modal -->
+    <div id="rsvpModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" id="rsvpCloseBtn" onclick="closeRSVP()"
+                aria-label="Close RSVP form">&times;</button>
+            <h2 class="modal-title">Wedding RSVP</h2>
+            <p class="modal-subtitle">
+                Please respond by September 4, 2026
+                <small>* Required fields</small>
+            </p>
+
+            <div class="success-message" id="successMessage">
+                <div class="check-circle" aria-hidden="true">&#10003;</div>
+                <h3>Thank You</h3>
+                <p>Your response has been saved successfully.<br>We look forward to celebrating with you.</p>
+            </div>
+
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address (Optional)</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+94 123 456 789">
+                </div>
+
+                <div class="form-group">
+                    <label>Will you be attending? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="accept" name="attendance" value="Yes" required>
+                            <label for="accept">Joyfully Accepts</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="decline" name="attendance" value="No" required>
+                            <label for="decline">Regretfully Declines</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of Guests (including you) *</label>
+                    <select id="guests" name="guests" required>
+                        <option value="">Select number of guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6+ Guests</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietary">Special Notes (Optional)</label>
+                    <textarea id="dietary" name="dietary"
+                        placeholder="Dietary requirements or a message for the couple..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Response</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("rsvpModal");
+        const form = document.getElementById("rsvpForm");
+        const successMessage = document.getElementById("successMessage");
+        const submitBtn = document.getElementById("submitBtn");
+
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzcC5ddyad4Qp9Zv5i1zRhnusk8uLNaKwWujO3WFrqLPbQYsLTKOFVQe8kRCiSZHUy29A/exec";
+
+        function openRSVP() {
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeRSVP() {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+            successMessage.style.display = "none";
+            form.style.display = "block";
+        }
+
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) closeRSVP();
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && modal.style.display === "block") closeRSVP();
+        });
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = "SUBMITTING...";
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch(APPS_SCRIPT_URL, {
+                    method: "POST",
+                    body: formData
+                });
+
+                form.style.display = "none";
+                successMessage.style.display = "block";
+
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "SUBMIT RESPONSE";
+                    closeRSVP();
+                }, 3000);
+
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "SUBMIT RESPONSE";
+                alert("There was an error submitting your response. Please try again.");
+                console.error("RSVP Error:", error);
+            }
+        });
+
+        // Scroll reveal animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
