@@ -126,6 +126,13 @@
             background: var(--ivory);
             border-top: 1px solid rgba(92, 107, 86, 0.1);
             border-bottom: 1px solid rgba(92, 107, 86, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-section > * {
+            position: relative;
+            z-index: 2;
         }
 
         .note-ornament {
@@ -252,18 +259,18 @@
                 transform: translateY(0) translateX(0) rotate(0deg) scale(0.7);
             }
             8% {
-                opacity: 0.3;
+                opacity: 0.5;
             }
             30% {
-                opacity: 0.25;
+                opacity: 0.45;
                 transform: translateY(120px) translateX(15px) rotate(90deg) scale(1);
             }
             60% {
-                opacity: 0.35;
+                opacity: 0.55;
                 transform: translateY(280px) translateX(-10px) rotate(200deg) scale(0.9);
             }
             85% {
-                opacity: 0.2;
+                opacity: 0.4;
             }
             100% {
                 opacity: 0;
@@ -894,6 +901,22 @@
 
         <!-- Heartfelt Note -->
         <div class="note-section fade-up">
+            <!-- Floating Petals Background -->
+            <div class="petal-canvas">
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.6" transform="rotate(-12 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.55" transform="rotate(18 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.5" transform="rotate(-28 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.3" transform="rotate(10 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.55" transform="rotate(35 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.5" transform="rotate(-5 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.45" transform="rotate(22 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.6" transform="rotate(-18 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.25" transform="rotate(30 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.5" transform="rotate(8 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.55" transform="rotate(-40 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.5" transform="rotate(15 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.6" transform="rotate(-22 15 10)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.45" transform="rotate(28 15 12)"/><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.3" transform="rotate(-8 15 12)"/></svg></div>
+            </div>
+
             <div class="note-ornament">
                 <span class="line"></span>
                 <span class="diamond"></span>
