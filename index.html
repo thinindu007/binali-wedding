@@ -9,7 +9,8 @@
         content="You are cordially invited to celebrate the Homecoming of Binali & Misal. RSVP to confirm your attendance.">
     <!-- Open Graph tags for social media link previews -->
     <meta property="og:title" content="Binali & Misal - Homecoming">
-    <meta property="og:description" content="You are cordially invited to celebrate the Homecoming of Binali & Misal. RSVP to confirm your attendance.">
+    <meta property="og:description"
+        content="You are cordially invited to celebrate the Homecoming of Binali & Misal. RSVP to confirm your attendance.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +20,14 @@
     <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; window.scrollTo(0, 0);</script>
     <style>
         :root {
-            --sage: #5c6b56;
-            --sage-light: #8a9b7a;
-            --sage-dark: #3d4a38;
+            --burgundy: #800020;
+            --dusty-rose: #C9A9A6;
+            --burgundy-dark: #5a0016;
             --ivory: #f7f4ef;
             --ivory-warm: #ede8df;
             --charcoal: #2c2c2c;
             --text-soft: #6b6b6b;
-            --accent-rose: #c4a07a;
+            --accent-rose: #d6b8b5;
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body: 'Montserrat', 'Segoe UI', sans-serif;
         }
@@ -131,7 +132,7 @@
             overflow: hidden;
         }
 
-        .note-section > * {
+        .note-section>* {
             position: relative;
             z-index: 2;
         }
@@ -147,14 +148,14 @@
         .note-ornament .line {
             width: 40px;
             height: 1px;
-            background: var(--sage-light);
+            background: var(--dusty-rose);
             opacity: 0.5;
         }
 
         .note-ornament .diamond {
             width: 6px;
             height: 6px;
-            background: var(--sage-light);
+            background: var(--dusty-rose);
             transform: rotate(45deg);
             opacity: 0.6;
         }
@@ -164,7 +165,7 @@
             font-size: 1.2rem;
             font-weight: 400;
             font-style: italic;
-            color: var(--sage);
+            color: var(--burgundy);
             line-height: 1.9;
         }
 
@@ -207,7 +208,7 @@
             overflow: hidden;
         }
 
-        .details-section > * {
+        .details-section>* {
             position: relative;
             z-index: 2;
         }
@@ -233,46 +234,190 @@
             height: 100%;
         }
 
-        .petal:nth-child(1)  { width: 26px; height: 26px; left: 8%;  animation-duration: 10s; animation-delay: 0s; }
-        .petal:nth-child(2)  { width: 20px; height: 20px; left: 22%; animation-duration: 13s; animation-delay: 1.5s; }
-        .petal:nth-child(3)  { width: 24px; height: 24px; left: 38%; animation-duration: 9s;  animation-delay: 3s; }
-        .petal:nth-child(4)  { width: 18px; height: 18px; left: 52%; animation-duration: 12s; animation-delay: 0.8s; }
-        .petal:nth-child(5)  { width: 22px; height: 22px; left: 67%; animation-duration: 11s; animation-delay: 2.5s; }
-        .petal:nth-child(6)  { width: 28px; height: 28px; left: 82%; animation-duration: 14s; animation-delay: 4s; }
-        .petal:nth-child(7)  { width: 19px; height: 19px; left: 90%; animation-duration: 10s; animation-delay: 5.5s; }
-        .petal:nth-child(8)  { width: 23px; height: 23px; left: 48%; animation-duration: 12s; animation-delay: 4.5s; }
-        .petal:nth-child(9)  { width: 17px; height: 17px; left: 14%; animation-duration: 15s; animation-delay: 6s; }
-        .petal:nth-child(10) { width: 25px; height: 25px; left: 73%; animation-duration: 9s;  animation-delay: 7s; }
-        .petal:nth-child(11) { width: 21px; height: 21px; left: 5%;  animation-duration: 11s; animation-delay: 1s; }
-        .petal:nth-child(12) { width: 16px; height: 16px; left: 30%; animation-duration: 14s; animation-delay: 2s; }
-        .petal:nth-child(13) { width: 27px; height: 27px; left: 58%; animation-duration: 10s; animation-delay: 0.3s; }
-        .petal:nth-child(14) { width: 19px; height: 19px; left: 85%; animation-duration: 13s; animation-delay: 3.5s; }
-        .petal:nth-child(15) { width: 22px; height: 22px; left: 42%; animation-duration: 9s;  animation-delay: 5s; }
-        .petal:nth-child(16) { width: 15px; height: 15px; left: 18%; animation-duration: 12s; animation-delay: 6.5s; }
-        .petal:nth-child(17) { width: 24px; height: 24px; left: 62%; animation-duration: 11s; animation-delay: 8s; }
-        .petal:nth-child(18) { width: 20px; height: 20px; left: 95%; animation-duration: 15s; animation-delay: 2.8s; }
-        .petal:nth-child(19) { width: 18px; height: 18px; left: 3%;  animation-duration: 10s; animation-delay: 4.2s; }
-        .petal:nth-child(20) { width: 26px; height: 26px; left: 77%; animation-duration: 13s; animation-delay: 7.5s; }
+        .petal:nth-child(1) {
+            width: 26px;
+            height: 26px;
+            left: 8%;
+            animation-duration: 10s;
+            animation-delay: 0s;
+        }
+
+        .petal:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 22%;
+            animation-duration: 13s;
+            animation-delay: 1.5s;
+        }
+
+        .petal:nth-child(3) {
+            width: 24px;
+            height: 24px;
+            left: 38%;
+            animation-duration: 9s;
+            animation-delay: 3s;
+        }
+
+        .petal:nth-child(4) {
+            width: 18px;
+            height: 18px;
+            left: 52%;
+            animation-duration: 12s;
+            animation-delay: 0.8s;
+        }
+
+        .petal:nth-child(5) {
+            width: 22px;
+            height: 22px;
+            left: 67%;
+            animation-duration: 11s;
+            animation-delay: 2.5s;
+        }
+
+        .petal:nth-child(6) {
+            width: 28px;
+            height: 28px;
+            left: 82%;
+            animation-duration: 14s;
+            animation-delay: 4s;
+        }
+
+        .petal:nth-child(7) {
+            width: 19px;
+            height: 19px;
+            left: 90%;
+            animation-duration: 10s;
+            animation-delay: 5.5s;
+        }
+
+        .petal:nth-child(8) {
+            width: 23px;
+            height: 23px;
+            left: 48%;
+            animation-duration: 12s;
+            animation-delay: 4.5s;
+        }
+
+        .petal:nth-child(9) {
+            width: 17px;
+            height: 17px;
+            left: 14%;
+            animation-duration: 15s;
+            animation-delay: 6s;
+        }
+
+        .petal:nth-child(10) {
+            width: 25px;
+            height: 25px;
+            left: 73%;
+            animation-duration: 9s;
+            animation-delay: 7s;
+        }
+
+        .petal:nth-child(11) {
+            width: 21px;
+            height: 21px;
+            left: 5%;
+            animation-duration: 11s;
+            animation-delay: 1s;
+        }
+
+        .petal:nth-child(12) {
+            width: 16px;
+            height: 16px;
+            left: 30%;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+
+        .petal:nth-child(13) {
+            width: 27px;
+            height: 27px;
+            left: 58%;
+            animation-duration: 10s;
+            animation-delay: 0.3s;
+        }
+
+        .petal:nth-child(14) {
+            width: 19px;
+            height: 19px;
+            left: 85%;
+            animation-duration: 13s;
+            animation-delay: 3.5s;
+        }
+
+        .petal:nth-child(15) {
+            width: 22px;
+            height: 22px;
+            left: 42%;
+            animation-duration: 9s;
+            animation-delay: 5s;
+        }
+
+        .petal:nth-child(16) {
+            width: 15px;
+            height: 15px;
+            left: 18%;
+            animation-duration: 12s;
+            animation-delay: 6.5s;
+        }
+
+        .petal:nth-child(17) {
+            width: 24px;
+            height: 24px;
+            left: 62%;
+            animation-duration: 11s;
+            animation-delay: 8s;
+        }
+
+        .petal:nth-child(18) {
+            width: 20px;
+            height: 20px;
+            left: 95%;
+            animation-duration: 15s;
+            animation-delay: 2.8s;
+        }
+
+        .petal:nth-child(19) {
+            width: 18px;
+            height: 18px;
+            left: 3%;
+            animation-duration: 10s;
+            animation-delay: 4.2s;
+        }
+
+        .petal:nth-child(20) {
+            width: 26px;
+            height: 26px;
+            left: 77%;
+            animation-duration: 13s;
+            animation-delay: 7.5s;
+        }
 
         @keyframes petalFloat {
             0% {
                 opacity: 0;
                 transform: translateY(0) translateX(0) rotate(0deg) scale(0.7);
             }
+
             8% {
                 opacity: 0.5;
             }
+
             30% {
                 opacity: 0.45;
                 transform: translateY(120px) translateX(15px) rotate(90deg) scale(1);
             }
+
             60% {
                 opacity: 0.55;
                 transform: translateY(280px) translateX(-10px) rotate(200deg) scale(0.9);
             }
+
             85% {
                 opacity: 0.4;
             }
+
             100% {
                 opacity: 0;
                 transform: translateY(450px) translateX(20px) rotate(360deg) scale(0.6);
@@ -285,7 +430,7 @@
             font-weight: 600;
             letter-spacing: 5px;
             text-transform: uppercase;
-            color: var(--sage);
+            color: var(--burgundy);
             margin-bottom: 28px;
         }
 
@@ -309,7 +454,7 @@
         .detail-icon svg {
             width: 24px;
             height: 24px;
-            stroke: var(--sage-light);
+            stroke: var(--dusty-rose);
             fill: none;
             stroke-width: 1.5;
         }
@@ -334,7 +479,7 @@
         .details-divider {
             width: 1px;
             height: 36px;
-            background: var(--sage-light);
+            background: var(--dusty-rose);
             opacity: 0.3;
             margin: 0 auto;
         }
@@ -358,7 +503,7 @@
             display: block;
             font-family: var(--font-display);
             font-size: 1.8rem;
-            color: var(--sage);
+            color: var(--burgundy);
             line-height: 1;
             margin-bottom: 4px;
         }
@@ -376,7 +521,7 @@
         .rsvp-section {
             padding: 48px 36px;
             text-align: center;
-            background: var(--sage-dark);
+            background: var(--burgundy-dark);
             color: #fff;
         }
 
@@ -420,7 +565,7 @@
         @media (hover: hover) {
             .rsvp-btn:hover {
                 background: #fff;
-                color: var(--sage-dark);
+                color: var(--burgundy-dark);
                 border-color: #fff;
             }
         }
@@ -470,7 +615,7 @@
         .page-footer {
             text-align: center;
             padding: 28px 36px;
-            background: var(--sage-dark);
+            background: var(--burgundy-dark);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.35);
@@ -540,14 +685,14 @@
         }
 
         .modal-close:hover {
-            color: var(--sage);
+            color: var(--burgundy);
         }
 
         .modal-title {
             font-family: var(--font-display);
             font-size: 2rem;
             font-weight: 400;
-            color: var(--sage-dark);
+            color: var(--burgundy-dark);
             text-align: center;
             margin-bottom: 6px;
         }
@@ -602,7 +747,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--sage);
+            border-color: var(--burgundy);
             box-shadow: 0 0 0 3px rgba(92, 107, 86, 0.1);
         }
 
@@ -630,7 +775,7 @@
         }
 
         .radio-option:has(input:checked) {
-            border-color: var(--sage);
+            border-color: var(--burgundy);
             background: rgba(92, 107, 86, 0.06);
         }
 
@@ -638,7 +783,7 @@
             cursor: pointer;
             width: 16px;
             height: 16px;
-            accent-color: var(--sage);
+            accent-color: var(--burgundy);
         }
 
         .radio-option label {
@@ -653,7 +798,7 @@
         .submit-btn {
             width: 100%;
             padding: 14px;
-            background: var(--sage-dark);
+            background: var(--burgundy-dark);
             color: #fff;
             border: none;
             border-radius: 2px;
@@ -671,7 +816,7 @@
 
         @media (hover: hover) {
             .submit-btn:hover {
-                background: var(--sage);
+                background: var(--burgundy);
                 transform: translateY(-1px);
             }
         }
@@ -694,7 +839,7 @@
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: var(--sage);
+            background: var(--burgundy);
             color: #fff;
             display: flex;
             align-items: center;
@@ -707,7 +852,7 @@
             font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 400;
-            color: var(--sage-dark);
+            color: var(--burgundy-dark);
             margin-bottom: 8px;
         }
 
@@ -889,9 +1034,11 @@
             .modal-overlay {
                 padding-bottom: env(safe-area-inset-bottom);
             }
+
             .rsvp-section {
                 padding-bottom: calc(48px + env(safe-area-inset-bottom));
             }
+
             .page-footer {
                 padding-bottom: calc(28px + env(safe-area-inset-bottom));
             }
@@ -902,8 +1049,9 @@
             .mosaic-cell:hover img {
                 transform: none;
             }
+
             .submit-btn:hover {
-                background: var(--sage-dark);
+                background: var(--burgundy-dark);
                 transform: none;
             }
         }
@@ -927,7 +1075,7 @@
         <div class="hero">
             <img src="assests/WhatsApp Image 2026-08-13 at 10.59.05 PM (2).jpeg" alt="Binali and Misal" loading="eager">
             <div class="hero-overlay">
-                <p class="hero-label">Our Forever Begins</p>
+                <p class="hero-label">As We Continue</p>
                 <h1 class="hero-names">
                     Binali
                     <span class="ampersand">&</span>
@@ -941,18 +1089,60 @@
         <div class="note-section fade-up">
             <!-- Floating Petals Background -->
             <div class="petal-canvas">
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.6" transform="rotate(-12 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.55" transform="rotate(18 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.5" transform="rotate(-28 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.3" transform="rotate(10 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.55" transform="rotate(35 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.5" transform="rotate(-5 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.45" transform="rotate(22 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.6" transform="rotate(-18 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.25" transform="rotate(30 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.5" transform="rotate(8 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.55" transform="rotate(-40 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.5" transform="rotate(15 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.6" transform="rotate(-22 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.45" transform="rotate(28 15 12)"/><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.3" transform="rotate(-8 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.6"
+                            transform="rotate(-12 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.55"
+                            transform="rotate(18 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.5"
+                            transform="rotate(-28 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.3"
+                            transform="rotate(10 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.55"
+                            transform="rotate(35 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.5"
+                            transform="rotate(-5 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#800020" opacity="0.45"
+                            transform="rotate(22 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.6"
+                            transform="rotate(-18 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.25"
+                            transform="rotate(30 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.5"
+                            transform="rotate(8 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.55"
+                            transform="rotate(-40 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.5"
+                            transform="rotate(15 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.6"
+                            transform="rotate(-22 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#800020" opacity="0.45"
+                            transform="rotate(28 15 12)" />
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.3"
+                            transform="rotate(-8 15 12)" />
+                    </svg></div>
             </div>
 
             <div class="note-ornament">
@@ -985,26 +1175,98 @@
         <div class="details-section fade-up">
             <!-- Floating Petals Background -->
             <div class="petal-canvas">
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.5" transform="rotate(-15 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.3" transform="rotate(20 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.4" transform="rotate(10 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.45" transform="rotate(-25 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.35" transform="rotate(30 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.4" transform="rotate(-10 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.25" transform="rotate(15 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.5" transform="rotate(20 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.3" transform="rotate(-20 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.35" transform="rotate(5 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.4" transform="rotate(25 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.3" transform="rotate(-30 15 12)"/><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.2" transform="rotate(10 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.45" transform="rotate(12 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.4" transform="rotate(-18 15 12)"/><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.2" transform="rotate(22 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.5" transform="rotate(35 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.35" transform="rotate(-8 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.4" transform="rotate(28 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.2" transform="rotate(-5 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#c4a07a" opacity="0.45" transform="rotate(-22 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#8a9b7a" opacity="0.5" transform="rotate(15 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#5c6b56" opacity="0.35" transform="rotate(-35 15 12)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="10" rx="6" ry="10" fill="#c4a07a" opacity="0.4" transform="rotate(8 15 10)"/><ellipse cx="15" cy="10" rx="6" ry="10" fill="#5c6b56" opacity="0.25" transform="rotate(-12 15 10)"/></svg></div>
-                <div class="petal"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="12" rx="5" ry="9" fill="#8a9b7a" opacity="0.45" transform="rotate(40 15 12)"/></svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.5"
+                            transform="rotate(-15 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.3"
+                            transform="rotate(20 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.4"
+                            transform="rotate(10 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.45"
+                            transform="rotate(-25 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#800020" opacity="0.35"
+                            transform="rotate(30 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.4"
+                            transform="rotate(-10 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.25"
+                            transform="rotate(15 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.5"
+                            transform="rotate(20 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.3"
+                            transform="rotate(-20 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.35"
+                            transform="rotate(5 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.4"
+                            transform="rotate(25 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#800020" opacity="0.3"
+                            transform="rotate(-30 15 12)" />
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.2"
+                            transform="rotate(10 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.45"
+                            transform="rotate(12 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.4"
+                            transform="rotate(-18 15 12)" />
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.2"
+                            transform="rotate(22 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.5"
+                            transform="rotate(35 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.35"
+                            transform="rotate(-8 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.4"
+                            transform="rotate(28 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.2"
+                            transform="rotate(-5 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#d6b8b5" opacity="0.45"
+                            transform="rotate(-22 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#C9A9A6" opacity="0.5"
+                            transform="rotate(15 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#800020" opacity="0.35"
+                            transform="rotate(-35 15 12)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#d6b8b5" opacity="0.4"
+                            transform="rotate(8 15 10)" />
+                        <ellipse cx="15" cy="10" rx="6" ry="10" fill="#800020" opacity="0.25"
+                            transform="rotate(-12 15 10)" />
+                    </svg></div>
+                <div class="petal"><svg viewBox="0 0 30 30">
+                        <ellipse cx="15" cy="12" rx="5" ry="9" fill="#C9A9A6" opacity="0.45"
+                            transform="rotate(40 15 12)" />
+                    </svg></div>
             </div>
 
             <p class="section-label">Celebration Details</p>
@@ -1060,8 +1322,10 @@
             <p class="rsvp-sub">Please respond by September 4, 2026</p>
             <div class="rsvp-contacts">
                 <p class="contacts-label">For RSVP inquiries, contact</p>
-                <p class="contact-item"><span class="contact-name">Sumith</span> <a href="tel:0773339433">077 333 9433</a></p>
-                <p class="contact-item"><span class="contact-name">Amasha</span> <a href="tel:0776382101">077 638 2101</a></p>
+                <p class="contact-item"><span class="contact-name">Sumith</span> <a href="tel:0773339433">077 333
+                        9433</a></p>
+                <p class="contact-item"><span class="contact-name">Amasha</span> <a href="tel:0776382101">077 638
+                        2101</a></p>
             </div>
             <button class="rsvp-btn" id="rsvpOpenBtn" onclick="openRSVP()">RSVP Now</button>
         </div>
