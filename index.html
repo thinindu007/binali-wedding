@@ -1380,7 +1380,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="guests-group">
                     <label for="guests">Number of Guests (including you) *</label>
                     <select id="guests" name="guests" required>
                         <option value="">Select number of guests</option>
@@ -1409,6 +1409,23 @@
         const form = document.getElementById("rsvpForm");
         const successMessage = document.getElementById("successMessage");
         const submitBtn = document.getElementById("submitBtn");
+        
+        const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+        const guestsGroup = document.getElementById("guests-group");
+        const guestsSelect = document.getElementById("guests");
+
+        attendanceRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'No') {
+                    guestsGroup.style.display = 'none';
+                    guestsSelect.required = false;
+                    guestsSelect.value = ''; // Reset value
+                } else {
+                    guestsGroup.style.display = 'block';
+                    guestsSelect.required = true;
+                }
+            });
+        });
 
         const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxBXFUsxDw4CzZs9EzWBTVaeCTYYPF3l-BeZel-u0uJu2JDF_GDPG4s-9vdQ5shvHf/exec";
 
