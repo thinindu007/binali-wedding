@@ -412,16 +412,21 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.35s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
-        .rsvp-btn:hover {
-            background: #fff;
-            color: var(--sage-dark);
-            border-color: #fff;
+        @media (hover: hover) {
+            .rsvp-btn:hover {
+                background: #fff;
+                color: var(--sage-dark);
+                border-color: #fff;
+            }
         }
 
         .rsvp-btn:active {
-            transform: scale(0.98);
+            transform: scale(0.97);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .rsvp-contacts {
@@ -659,11 +664,15 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
             margin-top: 8px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
-        .submit-btn:hover {
-            background: var(--sage);
-            transform: translateY(-1px);
+        @media (hover: hover) {
+            .submit-btn:hover {
+                background: var(--sage);
+                transform: translateY(-1px);
+            }
         }
 
         .submit-btn:disabled {
@@ -879,6 +888,34 @@
             .modal-overlay {
                 padding-bottom: env(safe-area-inset-bottom);
             }
+            .rsvp-section {
+                padding-bottom: calc(48px + env(safe-area-inset-bottom));
+            }
+            .page-footer {
+                padding-bottom: calc(28px + env(safe-area-inset-bottom));
+            }
+        }
+
+        /* ── Mobile Touch Fixes ── */
+        @media (hover: none) {
+            .mosaic-cell:hover img {
+                transform: none;
+            }
+            .submit-btn:hover {
+                background: var(--sage-dark);
+                transform: none;
+            }
+        }
+
+        /* Prevent iOS text size adjustment */
+        html {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        /* Smooth scrolling for iOS */
+        .modal-overlay {
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
@@ -1023,7 +1060,6 @@
             <div class="rsvp-contacts">
                 <p class="contacts-label">For RSVP inquiries, contact</p>
                 <p class="contact-item"><span class="contact-name">Sumith</span> <a href="tel:0773339433">077 333 9433</a></p>
-                <p class="contact-item"><span class="contact-name">Prasad</span> <a href="tel:0772642651">077 264 2651</a></p>
                 <p class="contact-item"><span class="contact-name">Amasha</span> <a href="tel:0776382101">077 638 2101</a></p>
             </div>
             <button class="rsvp-btn" id="rsvpOpenBtn" onclick="openRSVP()">RSVP Now</button>
@@ -1162,6 +1198,10 @@
                 console.error("RSVP Error:", error);
             }
         });
+
+        // Scroll to top on every page load/refresh
+        window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+        window.scrollTo(0, 0);
 
         // Countdown Timer — targets 18 Sep 2026, 6:30 PM IST
         const targetDate = new Date('2026-09-18T18:30:00+05:30').getTime();
