@@ -459,6 +459,17 @@
             stroke-width: 1.5;
         }
 
+        .location-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .location-link:hover {
+            opacity: 0.8;
+        }
+
         .detail-title {
             font-family: var(--font-display);
             font-size: 1.4rem;
@@ -1310,8 +1321,10 @@
                         <circle cx="12" cy="10" r="3" />
                     </svg>
                 </div>
-                <p class="detail-title">Ahasa at ITC Ratnadipa</p>
-                <p class="detail-sub">29th Floor, Colombo</p>
+                <a href="https://maps.app.goo.gl/iayFYeif7xC5PCWa6" target="_blank" rel="noopener noreferrer" class="location-link">
+                    <p class="detail-title">Ahasa at ITC Ratnadipa</p>
+                    <p class="detail-sub">29th Floor, Colombo</p>
+                </a>
             </div>
         </div>
 
